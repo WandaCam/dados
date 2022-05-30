@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+   <header>
+       <h1>
+           DADOS ALEATORIAMENTE 
+       </h1>
+   </header>
+   <section class="res">
+        <h2>Ingresa el numero de jugadores</h2>
+        <input type="number" id="n1" value="1">
+        <button class="button button1" id="btn">TIRAR DADOS</button>
+        <br><br>
+        <div id="resultado"></div>
+        <div id="salida"></div>
+        <script>
+            var b=document.getElementById('btn');
+            b.addEventListener('click',calcular1);
+            var c=document.getElementById('btn1');
+            c.addEventListener('click',funcion);
+            function calcular1(){
+                var n1=parseInt(document.getElementById('n1').value);
+                var vector = [];
+                for (let i = 0; i < n1; i++) {
+                    vector[i]=Math.floor(Math.random() * 6) + 1;
+                }
+                var a = Math.max.apply(null, vector)
+                document.getElementById("resultado").innerHTML= vector ;
+                document.getElementById("salida").innerHTML="Gana el numero: "+a;
+
+
+            }
+        </script>
+   </section>
+</body>
+</html>
